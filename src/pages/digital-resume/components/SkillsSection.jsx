@@ -173,9 +173,7 @@ const SkillsSection = ({ skills }) => {
             <div className="text-sm text-muted-foreground">Full-Stack</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-warning mb-1">
-              {new Date()?.getFullYear() - 2019}+
-            </div>
+            <div className="text-2xl font-bold text-warning mb-1">+3</div>
             <div className="text-sm text-muted-foreground">Years Experience</div>
           </div>
         </div>

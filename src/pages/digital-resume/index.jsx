@@ -41,7 +41,7 @@ const DigitalResume = () => {
       position: "Développeur Web (Projet de Fin d'Études)",
       company: "Sonatrach - Division Production HSE",
       location: "Alger, Algérie",
-      duration: "2023",
+      duration: "2025",
       type: "Stage / Projet",
       current: false,
       description: `Application Reshume pour Sonatrach — Dans le cadre d’un projet de fin d’études, j’ai conçu et développé Reshume, une application web innovante pour le département HSE de la Division Production de Sonatrach. Cette plateforme, développée avec HTML, CSS, JavaScript, Django, et MySQL, automatise la gestion des remboursements des frais de mission des employés. Elle intègre des fonctionnalités clés telles que la gestion des utilisateurs, le suivi des missions via un tableau de bord, l’historique des transactions, et l’envoi de notifications par email pour une communication transparente. En utilisant des bibliothèques comme Chart.js pour les visualisations et Moment.js pour la gestion des dates, Reshume offre une interface moderne, responsive et compatible avec le mode sombre. Ce projet a permis d’optimiser les processus manuels, de réduire les erreurs et d’améliorer l’efficacité opérationnelle, démontrant mes compétences en développement web et mon engagement à répondre aux besoins spécifiques de Sonatrach.`,
@@ -53,7 +53,7 @@ const DigitalResume = () => {
       position: "Développeur Web",
       company: "CHU Mustapha - Service Pied Diabétique",
       location: "Alger, Algérie",
-      duration: "2022-2023",
+      duration: "2025",
       type: "Projet",
       current: false,
       description: `Bucha Tech est une application web développée en deux mois pour le service de prise en charge du pied diabétique du CHU Mustapha. Son objectif est de gérer de manière détaillée les données des patients, ainsi que celles des médecins et infirmiers, à travers une interface moderne, intuitive et facile à utiliser. L’application intègre des graphiques pour visualiser les informations, facilitant le suivi médical et améliorant l’efficacité des processus cliniques.`,
@@ -96,7 +96,7 @@ const DigitalResume = () => {
       name: "React.js",
       category: "frontend",
       proficiency: "Expert",
-      experience: "5+ years",
+      experience: "3 years",
       description: "Advanced React development with hooks, context, and performance optimization",
       technologies: ["Redux", "Next.js", "React Router", "Styled Components"],
       certified: true
@@ -105,7 +105,7 @@ const DigitalResume = () => {
       name: "Node.js",
       category: "backend",
       proficiency: "Expert",
-      experience: "4+ years",
+      experience: "3 years",
       description: "Server-side JavaScript development with Express and microservices architecture",
       technologies: ["Express.js", "Fastify", "Socket.io", "PM2"],
       certified: false
@@ -114,7 +114,7 @@ const DigitalResume = () => {
       name: "TypeScript",
       category: "frontend",
       proficiency: "Advanced",
-      experience: "3+ years",
+      experience: "2 years",
       description: "Type-safe JavaScript development for large-scale applications",
       technologies: ["TSConfig", "Type Guards", "Generics", "Decorators"],
       certified: false
@@ -123,7 +123,7 @@ const DigitalResume = () => {
       name: "PostgreSQL",
       category: "database",
       proficiency: "Advanced",
-      experience: "4+ years",
+      experience: "3 years",
       description: "Relational database design, optimization, and administration",
       technologies: ["Prisma", "Sequelize", "PgAdmin", "Query Optimization"],
       certified: false
@@ -132,7 +132,7 @@ const DigitalResume = () => {
       name: "MongoDB",
       category: "database",
       proficiency: "Advanced",
-      experience: "3+ years",
+      experience: "2 years",
       description: "NoSQL database design and aggregation pipeline development",
       technologies: ["Mongoose", "Atlas", "Compass", "Aggregation"],
       certified: true
@@ -141,7 +141,7 @@ const DigitalResume = () => {
       name: "AWS",
       category: "tools",
       proficiency: "Advanced",
-      experience: "3+ years",
+      experience: "2 years",
       description: "Cloud infrastructure and serverless application deployment",
       technologies: ["EC2", "S3", "Lambda", "RDS", "CloudFormation"],
       certified: true
@@ -150,7 +150,7 @@ const DigitalResume = () => {
       name: "Docker",
       category: "tools",
       proficiency: "Intermediate",
-      experience: "2+ years",
+      experience: "2 years",
       description: "Containerization and orchestration for development and production",
       technologies: ["Docker Compose", "Kubernetes", "Registry", "Multi-stage builds"],
       certified: false
@@ -159,7 +159,7 @@ const DigitalResume = () => {
       name: "GraphQL",
       category: "backend",
       proficiency: "Intermediate",
-      experience: "2+ years",
+      experience: "2 years",
       description: "API development with efficient data fetching and real-time subscriptions",
       technologies: ["Apollo Server", "Prisma", "Subscriptions", "Federation"],
       certified: false
@@ -168,7 +168,7 @@ const DigitalResume = () => {
       name: "Leadership",
       category: "soft",
       proficiency: "Advanced",
-      experience: "3+ years",
+      experience: "3 years",
       description: "Team leadership, mentoring, and project management",
       technologies: ["Agile", "Scrum", "Code Reviews", "1-on-1s"],
       certified: false
@@ -177,7 +177,7 @@ const DigitalResume = () => {
       name: "Problem Solving",
       category: "soft",
       proficiency: "Expert",
-      experience: "5+ years",
+      experience: "3 years",
       description: "Analytical thinking and creative solution development",
       technologies: ["Debugging", "Architecture Design", "Performance Analysis", "Root Cause Analysis"],
       certified: false

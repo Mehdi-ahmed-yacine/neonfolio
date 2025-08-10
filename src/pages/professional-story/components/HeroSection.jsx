@@ -93,18 +93,18 @@ const HeroSection = () => {
 
             <div className="flex items-center space-x-6 pt-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">2.5</div>
+                <div className="text-2xl font-bold text-foreground">+3</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
+              </div>
+              <div className="w-px h-12 bg-border"></div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-foreground">+10</div>
+                <div className="text-sm text-muted-foreground">Projects Completed</div>
               </div>
               <div className="w-px h-12 bg-border"></div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-foreground">2025</div>
                 <div className="text-sm text-muted-foreground">Bachelor's Degree</div>
-              </div>
-              <div className="w-px h-12 bg-border"></div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">Present</div>
-                <div className="text-sm text-muted-foreground">Master's Student</div>
               </div>
             </div>
           </div>
