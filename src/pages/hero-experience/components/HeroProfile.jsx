@@ -12,7 +12,7 @@ const HeroProfile = () => {
         {/* Inner Frame */}
         <div className="absolute inset-2 clip-hexagon bg-background overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+            src="/assets/images/5798831463582517533.jpg"
             alt="Mehdi Ahmed Yacine - Full Stack Developer"
             className="w-full h-full object-cover scale-110 group-hover:scale-125 transition-transform duration-700"
           />

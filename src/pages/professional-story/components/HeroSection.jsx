@@ -98,7 +98,7 @@ const HeroSection = () => {
               </div>
               <div className="w-px h-12 bg-border"></div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">2022</div>
+                <div className="text-2xl font-bold text-foreground">2025</div>
                 <div className="text-sm text-muted-foreground">Bachelor's Degree</div>
               </div>
               <div className="w-px h-12 bg-border"></div>
@@ -120,7 +120,7 @@ const HeroSection = () => {
                 <div className="relative">
                   <div className="w-full aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
                     <Image
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop&crop=face"
+                      src="/assets/images/5798831463582517533.jpg"
                       alt="Ahmed Yacine Mehdi - Full Stack Developer"
                       className="w-full h-full object-cover"
                     />

@@ -6,7 +6,7 @@ import Button from '../../components/ui/Button';
 import SkillDetailPanel from './components/SkillDetailPanel';
 import CategoryFilter from './components/CategoryFilter';
 import LearningTimeline from './components/LearningTimeline';
-import GitHubStats from './components/GitHubStats';
+// GitHub stats section removed per request
 import SkillsHexGrid from './components/SkillsHexGrid';
 
 const SkillsMatrix = () => {
@@ -261,8 +261,7 @@ const SkillsMatrix = () => {
 
   const tabs = [
     { id: 'matrix', name: 'Skills Matrix', icon: 'Grid3x3' },
-    { id: 'timeline', name: 'Learning Journey', icon: 'TrendingUp' },
-    { id: 'github', name: 'GitHub Stats', icon: 'Github' }
+    { id: 'timeline', name: 'Learning Journey', icon: 'TrendingUp' }
   ];
 
   useEffect(() => {
@@ -303,9 +302,7 @@ const SkillsMatrix = () => {
               <div className="text-sm text-muted-foreground">Expert Level</div>
             </div>
             <div className="bg-card border border-border rounded-xl p-6 hover:border-warning/30 transition-colors duration-300">
-              <div className="text-3xl font-bold text-warning mb-2">
-                {skillsData?.reduce((sum, skill) => sum + skill?.experience, 0)}
-              </div>
+              <div className="text-3xl font-bold text-warning mb-2">3</div>
               <div className="text-sm text-muted-foreground">Years Experience</div>
             </div>
             <div className="bg-card border border-border rounded-xl p-6 hover:border-success/30 transition-colors duration-300">
@@ -389,7 +386,6 @@ const SkillsMatrix = () => {
           )}
 
           {activeTab === 'timeline' && <LearningTimeline />}
-          {activeTab === 'github' && <GitHubStats />}
         </div>
       </div>
       {/* Skill Detail Panel */}
@@ -428,6 +424,7 @@ const SkillsMatrix = () => {
                 iconName="Download"
                 iconPosition="left"
                 className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50"
+                onClick={() => window.open('/assets/images/Mehdi Ahmed Yacine.pdf', '_blank')}
               >
                 Download Resume
               </Button>

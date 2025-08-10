@@ -124,26 +124,7 @@ const HeroExperience = () => {
           </div>
         </div>
       </section>
-      {/* GitHub Activity Section */}
-      <section className="py-20 px-6 lg:px-8 bg-surface/30 reveal-up">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Development
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent ml-3">
-                Activity
-              </span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Consistent contribution and continuous learning. My GitHub activity reflects my passion for coding.
-            </p>
-          </div>
-          
-          <div className="flex justify-center">
-            <GitHubVisualization />
-          </div>
-        </div>
-      </section>
+      {/* Development Activity section removed per request */}
       {/* Contact Section */}
       <ContactSection />
       {/* Scroll Indicator */}

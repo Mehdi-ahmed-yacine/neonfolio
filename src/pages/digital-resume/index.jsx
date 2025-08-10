@@ -21,164 +21,72 @@ const DigitalResume = () => {
 
   // Mock data for personal information
   const personalInfo = {
-    name: "Mehdi Ahmed Yacine",
-    title: "Full-Stack Developer & Digital Craftsman",
-    summary: `Passionate full-stack developer with 5+ years of experience building scalable web applications and digital solutions. Specialized in React, Node.js, and modern web technologies with a focus on creating exceptional user experiences and robust backend systems.`,
-    email: "mehdi.yacine@example.com",
-    phone: "+1 (555) 123-4567",
-    location: "San Francisco, CA",
-    website: "www.mehdiyacine.dev",
-    profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    name: "Ahmed Yacine Mehdi",
+    title: "Full-Stack Developer | Master’s Student | Sonatrach Intern",
+    summary: `Master's student at University of Algiers 1 with a Bachelor's degree in Software and Information Systems Engineering. Experienced full-stack developer with professional internship at Sonatrach DP Hydra where I developed a web application named \"Reshume\".`,
+    email: "yacinemehdi2005@gmail.com",
+    phone: "+213 562 17 29 59",
+    location: "Algeria",
+    website: "",
+    profileImage: "/assets/images/5798831463582517533.jpg",
     socialLinks: [
-      { icon: "Github", label: "GitHub", url: "https://github.com/mehdiyacine" },
-      { icon: "Linkedin", label: "LinkedIn", url: "https://linkedin.com/in/mehdiyacine" },
-      { icon: "Twitter", label: "Twitter", url: "https://twitter.com/mehdiyacine" },
-      { icon: "Globe", label: "Portfolio", url: "https://mehdiyacine.dev" }
+      { icon: "Github", label: "GitHub", url: "https://github.com/yacine454-may" },
+      { icon: "Linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/ahmed-yacine-mehdi-5941a4303/" }
     ]
   };
 
   // Mock data for professional experience
   const experiences = [
     {
-      position: "Senior Full-Stack Developer",
-      company: "TechFlow Solutions",
-      location: "San Francisco, CA",
-      duration: "Jan 2022 - Present",
-      type: "Full-time",
-      current: true,
-      description: `Leading development of enterprise-level web applications using React, Node.js, and cloud technologies. Responsible for architecture decisions, code reviews, and mentoring junior developers while delivering high-quality solutions for Fortune 500 clients.`,
-      achievements: [
-        "Architected and developed 3 major client applications serving 100K+ users",
-        "Improved application performance by 40% through optimization and caching strategies",
-        "Led a team of 5 developers and established best practices for code quality",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
-        "Mentored 8 junior developers, with 6 receiving promotions within 18 months"
-      ],
-      technologies: ["React", "Node.js", "TypeScript", "PostgreSQL", "AWS", "Docker", "GraphQL"],
-      projects: [
-        {
-          name: "E-commerce Platform Redesign",
-          description: "Complete overhaul of legacy e-commerce system with modern React frontend and microservices backend",
-          technologies: ["React", "Node.js", "MongoDB", "Redis", "AWS"]
-        },
-        {
-          name: "Real-time Analytics Dashboard",
-          description: "Built comprehensive analytics platform with real-time data visualization and reporting",
-          technologies: ["React", "D3.js", "Socket.io", "PostgreSQL", "Docker"]
-        }
-      ],
-      metrics: [
-        { value: "40%", label: "Performance Improvement" },
-        { value: "100K+", label: "Users Served" },
-        { value: "99.9%", label: "Uptime Achieved" }
-      ]
+      position: "Développeur Web (Projet de Fin d'Études)",
+      company: "Sonatrach - Division Production HSE",
+      location: "Alger, Algérie",
+      duration: "2023",
+      type: "Stage / Projet",
+      current: false,
+      description: `Application Reshume pour Sonatrach — Dans le cadre d’un projet de fin d’études, j’ai conçu et développé Reshume, une application web innovante pour le département HSE de la Division Production de Sonatrach. Cette plateforme, développée avec HTML, CSS, JavaScript, Django, et MySQL, automatise la gestion des remboursements des frais de mission des employés. Elle intègre des fonctionnalités clés telles que la gestion des utilisateurs, le suivi des missions via un tableau de bord, l’historique des transactions, et l’envoi de notifications par email pour une communication transparente. En utilisant des bibliothèques comme Chart.js pour les visualisations et Moment.js pour la gestion des dates, Reshume offre une interface moderne, responsive et compatible avec le mode sombre. Ce projet a permis d’optimiser les processus manuels, de réduire les erreurs et d’améliorer l’efficacité opérationnelle, démontrant mes compétences en développement web et mon engagement à répondre aux besoins spécifiques de Sonatrach.`,
+      technologies: ["HTML", "CSS", "JavaScript", "Django", "MySQL", "Chart.js", "Moment.js"],
+      projects: [],
+      metrics: []
     },
     {
-      position: "Full-Stack Developer",
-      company: "InnovateLab",
-      location: "Austin, TX",
-      duration: "Mar 2020 - Dec 2021",
-      type: "Full-time",
+      position: "Développeur Web",
+      company: "CHU Mustapha - Service Pied Diabétique",
+      location: "Alger, Algérie",
+      duration: "2022-2023",
+      type: "Projet",
       current: false,
-      description: `Developed and maintained multiple web applications for startup clients, focusing on rapid prototyping and MVP development. Worked closely with designers and product managers to deliver user-centric solutions.`,
-      achievements: [
-        "Built 12+ web applications from concept to production",
-        "Reduced development time by 30% through reusable component libraries",
-        "Implemented automated testing increasing code coverage to 85%",
-        "Collaborated with cross-functional teams to deliver projects on time"
-      ],
-      technologies: ["React", "Express.js", "MongoDB", "Firebase", "Heroku", "Jest"],
-      projects: [
-        {
-          name: "Social Media Management Tool",
-          description: "Comprehensive platform for managing multiple social media accounts with scheduling and analytics",
-          technologies: ["React", "Node.js", "MongoDB", "Firebase"]
-        }
-      ],
-      metrics: [
-        { value: "12+", label: "Apps Delivered" },
-        { value: "30%", label: "Time Saved" },
-        { value: "85%", label: "Test Coverage" }
-      ]
-    },
-    {
-      position: "Frontend Developer",
-      company: "WebCraft Agency",
-      location: "Remote",
-      duration: "Jun 2019 - Feb 2020",
-      type: "Contract",
-      current: false,
-      description: `Specialized in creating responsive, accessible web interfaces for various clients. Focused on modern frontend technologies and best practices for user experience optimization.`,
-      achievements: [
-        "Delivered 20+ responsive websites with perfect accessibility scores",
-        "Improved client website loading speeds by average of 50%",
-        "Established frontend development standards and documentation"
-      ],
-      technologies: ["React", "Vue.js", "Sass", "Webpack", "Figma"],
-      metrics: [
-        { value: "20+", label: "Websites Built" },
-        { value: "50%", label: "Speed Improvement" },
-        { value: "100%", label: "Accessibility Score" }
-      ]
+      description: `Bucha Tech est une application web développée en deux mois pour le service de prise en charge du pied diabétique du CHU Mustapha. Son objectif est de gérer de manière détaillée les données des patients, ainsi que celles des médecins et infirmiers, à travers une interface moderne, intuitive et facile à utiliser. L’application intègre des graphiques pour visualiser les informations, facilitant le suivi médical et améliorant l’efficacité des processus cliniques.`,
+      technologies: ["React", "Node.js", "MongoDB", "Chart.js"],
+      projects: [],
+      metrics: []
     }
   ];
 
-  // Mock data for education
+  // Education: University of Algiers 1 (2024-2025)
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      institution: "University of California, Berkeley",
-      duration: "2015 - 2019",
-      location: "Berkeley, CA",
-      gpa: "3.8/4.0",
-      honors: "Magna Cum Laude",
-      relevantCourses: [
-        "Data Structures & Algorithms",
-        "Web Development",
-        "Database Systems",
-        "Software Engineering",
-        "Computer Networks",
-        "Machine Learning"
-      ],
-      projects: [
-        "Built a distributed chat application using WebSockets and Node.js",
-        "Developed machine learning model for predicting student performance",
-        "Created mobile app for campus navigation using React Native"
-      ]
+      degree: "Licence en Génie Logiciel et Systèmes d’Information",
+      institution: "Université d’Alger 1",
+      duration: "2024 - 2025",
+      location: "Alger, Algérie",
+      gpa: "",
+      honors: "",
+      relevantCourses: [],
+      projects: []
     }
   ];
 
-  // Mock data for certifications
+  // Certifications: Only ML certificate from code213
   const certifications = [
     {
-      name: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      issueDate: "March 2023",
-      expiryDate: "March 2026",
-      credentialId: "AWS-SAA-2023-001234",
-      skills: ["Cloud Architecture", "AWS Services", "Security", "Scalability"]
-    },
-    {
-      name: "Google Cloud Professional Developer",
-      issuer: "Google Cloud",
-      issueDate: "January 2023",
-      expiryDate: "January 2025",
-      credentialId: "GCP-PD-2023-005678",
-      skills: ["GCP Services", "Kubernetes", "DevOps", "Microservices"]
-    },
-    {
-      name: "MongoDB Certified Developer",
-      issuer: "MongoDB University",
-      issueDate: "November 2022",
-      credentialId: "MDB-DEV-2022-009876",
-      skills: ["NoSQL", "Database Design", "Aggregation", "Performance Tuning"]
-    },
-    {
-      name: "React Professional Certification",
-      issuer: "Meta (Facebook)",
-      issueDate: "August 2022",
-      credentialId: "META-REACT-2022-112233",
-      skills: ["React", "Redux", "Hooks", "Testing"]
+      name: "Machine Learning Certificate",
+      issuer: "code213 school",
+      issueDate: "2024",
+      expiryDate: "",
+      credentialId: "",
+      skills: ["Machine Learning", "Python", "Data Science"],
+      description: "Formation de 4 mois en Machine Learning à code213 school."
     }
   ];
 
@@ -387,12 +295,6 @@ const DigitalResume = () => {
           />
         </div>
       </section>
-      {/* Testimonials Section */}
-      <section className="py-16 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <TestimonialsSection testimonials={testimonials} />
-        </div>
-      </section>
       {/* Call to Action Section */}
       <section className="py-16 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -420,7 +322,7 @@ const DigitalResume = () => {
               <Button
                 variant="outline"
                 size="lg"
-                onClick={handleDownloadPDF}
+                onClick={() => window.open('/assets/images/Mehdi Ahmed Yacine.pdf', '_blank')}
                 iconName="Download"
                 iconPosition="left"
                 className="border-primary/30 text-primary hover:bg-primary/10"

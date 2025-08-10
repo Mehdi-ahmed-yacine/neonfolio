@@ -6,7 +6,7 @@ import Button from '../../components/ui/Button';
 import TechnologyRadar from './components/TechnologyRadar';
 import BetaProjects from './components/BetaProjects';
 import InteractiveDemo from './components/InteractiveDemo';
-import CodeExperiments from './components/CodeExperiments';
+// CodeExperiments removed per request
 
 const InnovationPlayground = () => {
   const [activeSection, setActiveSection] = useState('overview');
@@ -17,7 +17,7 @@ const InnovationPlayground = () => {
     { id: 'radar', title: 'Technology Radar', icon: 'Radar' },
     { id: 'beta', title: 'Beta Projects', icon: 'Flask' },
     { id: 'demos', title: 'Interactive Demos', icon: 'Play' },
-    { id: 'experiments', title: 'Code Experiments', icon: 'Code2' }
+    // Removed: Code Experiments
   ];
 
   const stats = [
@@ -238,12 +238,7 @@ const InnovationPlayground = () => {
           <InteractiveDemo />
         </div>
       </section>
-      {/* Code Experiments Section */}
-      <section id="experiments" className="py-16 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <CodeExperiments />
-        </div>
-      </section>
+      {/* Code Experiments Section removed */}
       {/* Call to Action */}
       <section className="py-16 px-6 lg:px-8 bg-gradient-to-r from-primary/10 to-accent/10 border-t border-border">
         <div className="max-w-4xl mx-auto text-center">

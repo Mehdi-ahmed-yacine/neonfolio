@@ -5,28 +5,21 @@ const ProjectStats = () => {
   const stats = [
     {
       icon: 'Code2',
-      value: '50+',
+      value: '+11',
       label: 'Projects Completed',
       description: 'Full-stack applications delivered',
       color: 'text-primary'
     },
     {
       icon: 'Users',
-      value: '25+',
+      value: '+5',
       label: 'Happy Clients',
       description: 'Satisfied customers worldwide',
       color: 'text-accent'
     },
     {
-      icon: 'TrendingUp',
-      value: '99%',
-      label: 'Success Rate',
-      description: 'Projects delivered on time',
-      color: 'text-success'
-    },
-    {
       icon: 'Award',
-      value: '3+',
+      value: '+2.5',
       label: 'Years Experience',
       description: 'Professional development',
       color: 'text-warning'

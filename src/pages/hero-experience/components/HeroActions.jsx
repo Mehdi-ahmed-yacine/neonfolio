@@ -6,11 +6,7 @@ const HeroActions = () => {
   const navigate = useNavigate();
 
   const handleDownloadResume = () => {
-    // Create a mock resume download
-    const link = document.createElement('a');
-    link.href = 'data:text/plain;charset=utf-8,Mehdi Ahmed Yacine - Full Stack Developer Resume\n\nContact: mehdi@example.com\nSkills: React, Node.js, Python, Django\nExperience: 5+ years in full-stack development';
-    link.download = 'Mehdi_Ahmed_Yacine_Resume.txt';
-    link?.click();
+    window.open('/assets/images/Mehdi Ahmed Yacine.pdf', '_blank');
   };
 
   const handleExploreProjects = () => {

@@ -23,24 +23,22 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e?.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 3000);
-    }, 2000);
+    const subject = encodeURIComponent(`New Project Inquiry from ${formData?.name}`);
+    const body = encodeURIComponent(`From: ${formData?.name} <${formData?.email}>
+
+${formData?.message}`);
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=yacinemehdi2005@gmail.com&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank');
+    setIsSubmitting(false);
+    setSubmitStatus('success');
+    setFormData({ name: '', email: '', message: '' });
+    setTimeout(() => setSubmitStatus(null), 3000);
   };
 
   const socialLinks = [
-    { name: 'GitHub', icon: 'Github', url: 'https://github.com/mehdiahmedyacine', color: 'text-foreground hover:text-primary' },
-    { name: 'LinkedIn', icon: 'Linkedin', url: 'https://linkedin.com/in/mehdiahmedyacine', color: 'text-foreground hover:text-accent' },
-    { name: 'Twitter', icon: 'Twitter', url: 'https://twitter.com/mehdiahmedyacine', color: 'text-foreground hover:text-primary' },
-    { name: 'Email', icon: 'Mail', url: 'mailto:mehdi@example.com', color: 'text-foreground hover:text-success' }
+    { name: 'GitHub', icon: 'Github', url: 'https://github.com/yacine454-may', color: 'text-foreground hover:text-primary' },
+    { name: 'LinkedIn', icon: 'Linkedin', url: 'https://www.linkedin.com/in/ahmed-yacine-mehdi-5941a4303/', color: 'text-foreground hover:text-accent' },
+    { name: 'Email', icon: 'Mail', url: 'mailto:yacinemehdi2005@gmail.com', color: 'text-foreground hover:text-success' }
   ];
 
   return (
@@ -72,7 +70,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <p className="text-muted-foreground">mehdi@example.com</p>
+                    <p className="text-muted-foreground">yacinemehdi2005@gmail.com</p>
                   </div>
                 </div>
 
