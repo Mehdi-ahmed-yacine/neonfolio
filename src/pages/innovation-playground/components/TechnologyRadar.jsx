@@ -8,86 +8,85 @@ const TechnologyRadar = () => {
   const technologies = [
     {
       id: 1,
-      name: "WebAssembly",
-      category: "performance",
+      name: "React Basics",
+      category: "frontend",
       status: "adopt",
-      confidence: 85,
-      timeline: "Q1 2025",
-      description: `High-performance web applications with near-native speed.\nPerfect for computational heavy tasks and game development.\nSeamless integration with existing JavaScript ecosystems.`,
+      confidence: 90,
+      timeline: "Now",
+      description: `Composants, props, state, hooks de base (useState, useEffect). Construction d'interfaces réactives.`,
       impact: "High",
-      complexity: "Medium",
-      adoption: 78
+      complexity: "Low",
+      adoption: 85
     },
     {
       id: 2,
-      name: "WebGL 2.0",
-      category: "graphics",
-      status: "trial",
-      confidence: 72,
-      timeline: "Q2 2025",
-      description: `Advanced 3D graphics rendering in the browser.\nInteractive data visualizations and immersive experiences.\nCross-platform compatibility with modern browsers.`,
+      name: "Django REST",
+      category: "backend",
+      status: "adopt",
+      confidence: 85,
+      timeline: "Now",
+      description: `API REST avec Django REST Framework, authentification JWT, CRUD, pagination.`,
       impact: "High",
-      complexity: "High",
-      adoption: 65
+      complexity: "Medium",
+      adoption: 70
     },
     {
       id: 3,
-      name: "Edge Computing",
-      category: "infrastructure",
-      status: "assess",
-      confidence: 68,
-      timeline: "Q3 2025",
-      description: `Distributed computing closer to data sources.\nReduced latency and improved performance.\nScalable architecture for global applications.`,
+      name: "Tailwind CSS",
+      category: "frontend",
+      status: "adopt",
+      confidence: 88,
+      timeline: "Now",
+      description: `Styliser rapidement les interfaces, responsive design, thèmes clairs/sombres.`,
       impact: "Medium",
-      complexity: "High",
-      adoption: 45
+      complexity: "Low",
+      adoption: 80
     },
     {
       id: 4,
-      name: "AI/ML Integration",
-      category: "intelligence",
-      status: "adopt",
-      confidence: 90,
-      timeline: "Q1 2025",
-      description: `Machine learning models in web applications.\nPersonalized user experiences and smart automation.\nReal-time data processing and predictions.`,
-      impact: "High",
+      name: "MySQL Basics",
+      category: "database",
+      status: "trial",
+      confidence: 75,
+      timeline: "Q3 2025",
+      description: `Modélisation simple, relations, jointures, index de base pour de bonnes performances.`,
+      impact: "Medium",
       complexity: "Medium",
-      adoption: 82
+      adoption: 60
     },
     {
       id: 5,
-      name: "Quantum Computing APIs",
-      category: "computing",
-      status: "hold",
-      confidence: 35,
-      timeline: "Q4 2026",
-      description: `Quantum computing access through cloud APIs.\nSolving complex optimization problems.\nEarly stage but promising for specific use cases.`,
-      impact: "Low",
-      complexity: "Very High",
-      adoption: 15
+      name: "Git & GitHub",
+      category: "tools",
+      status: "adopt",
+      confidence: 95,
+      timeline: "Now",
+      description: `Workflow basique: branches, commits, pull requests, déploiement avec Vercel.`,
+      impact: "High",
+      complexity: "Low",
+      adoption: 90
     },
     {
       id: 6,
-      name: "Progressive Web Apps 3.0",
-      category: "mobile",
+      name: "Deployment (Vercel)",
+      category: "devops",
       status: "adopt",
-      confidence: 88,
-      timeline: "Q1 2025",
-      description: `Next-generation PWAs with enhanced capabilities.\nNative-like performance and offline functionality.\nImproved app store distribution and installation.`,
-      impact: "High",
+      confidence: 85,
+      timeline: "Now",
+      description: `Build Vite, routes SPA, gestion des assets (images, PDF), variables d'environnement.`,
+      impact: "Medium",
       complexity: "Low",
       adoption: 75
     }
   ];
 
   const categories = [
-    { id: 'all', name: 'All Technologies', icon: 'Zap' },
-    { id: 'performance', name: 'Performance', icon: 'Gauge' },
-    { id: 'graphics', name: 'Graphics', icon: 'Palette' },
-    { id: 'infrastructure', name: 'Infrastructure', icon: 'Server' },
-    { id: 'intelligence', name: 'AI/ML', icon: 'Brain' },
-    { id: 'computing', name: 'Computing', icon: 'Cpu' },
-    { id: 'mobile', name: 'Mobile', icon: 'Smartphone' }
+    { id: 'all', name: 'All', icon: 'Zap' },
+    { id: 'frontend', name: 'Frontend', icon: 'Monitor' },
+    { id: 'backend', name: 'Backend', icon: 'Server' },
+    { id: 'database', name: 'Database', icon: 'Database' },
+    { id: 'tools', name: 'Tools', icon: 'Wrench' },
+    { id: 'devops', name: 'Deployment', icon: 'Rocket' }
   ];
 
   const statusConfig = {
