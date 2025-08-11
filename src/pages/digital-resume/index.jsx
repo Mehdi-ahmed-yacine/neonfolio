@@ -111,6 +111,15 @@ const DigitalResume = () => {
       certified: false
     },
     {
+      name: "Django",
+      category: "backend",
+      proficiency: "Advanced",
+      experience: "2 years",
+      description: "Backend development with Django and Django REST Framework, authentication, admin customization, and clean architectures.",
+      technologies: ["DRF", "JWT", "Celery"],
+      certified: false
+    },
+    {
       name: "TypeScript",
       category: "frontend",
       proficiency: "Advanced",
@@ -136,33 +145,6 @@ const DigitalResume = () => {
       description: "NoSQL database design and aggregation pipeline development",
       technologies: ["Mongoose", "Atlas", "Compass", "Aggregation"],
       certified: true
-    },
-    {
-      name: "AWS",
-      category: "tools",
-      proficiency: "Advanced",
-      experience: "2 years",
-      description: "Cloud infrastructure and serverless application deployment",
-      technologies: ["EC2", "S3", "Lambda", "RDS", "CloudFormation"],
-      certified: true
-    },
-    {
-      name: "Docker",
-      category: "tools",
-      proficiency: "Intermediate",
-      experience: "2 years",
-      description: "Containerization and orchestration for development and production",
-      technologies: ["Docker Compose", "Kubernetes", "Registry", "Multi-stage builds"],
-      certified: false
-    },
-    {
-      name: "GraphQL",
-      category: "backend",
-      proficiency: "Intermediate",
-      experience: "2 years",
-      description: "API development with efficient data fetching and real-time subscriptions",
-      technologies: ["Apollo Server", "Prisma", "Subscriptions", "Federation"],
-      certified: false
     },
     {
       name: "Leadership",

@@ -111,29 +111,6 @@ const SkillsMatrix = () => {
       lastUpdated: "Oct 2024"
     },
     {
-      id: 5,
-      name: "Docker",
-      category: "devops",
-      proficiency: "Intermediate",
-      experience: 2,
-      icon: "Package",
-      projectCount: 6,
-      isNew: false,
-      description: `Solid understanding of containerization with Docker, including multi-stage builds, docker-compose orchestration, and container optimization. Experience in deploying applications in containerized environments.`,
-      recentProjects: [
-        { name: "Containerized Microservices", year: "2024" },
-        { name: "Development Environment", year: "2024" },
-        { name: "CI/CD Pipeline", year: "2023" }
-      ],
-      learningPath: [
-        { title: "Docker basics", date: "2023", completed: true },
-        { title: "Multi-stage builds", date: "2023", completed: true },
-        { title: "Docker Compose", date: "2024", completed: true },
-        { title: "Kubernetes integration", date: "2025", completed: false }
-      ],
-      lastUpdated: "Sep 2024"
-    },
-    {
       id: 6,
       name: "Figma",
       category: "design",
@@ -198,28 +175,6 @@ const SkillsMatrix = () => {
         { title: "Data science libraries", date: "2024", completed: true }
       ],
       lastUpdated: "Nov 2024"
-    },
-    {
-      id: 9,
-      name: "AWS",
-      category: "devops",
-      proficiency: "Intermediate",
-      experience: 2,
-      icon: "Cloud",
-      projectCount: 4,
-      isNew: false,
-      description: `Experience with AWS services including EC2, S3, Lambda, and RDS. Familiar with cloud architecture patterns and serverless deployment strategies.`,
-      recentProjects: [
-        { name: "Serverless API", year: "2024" },
-        { name: "Static Site Hosting", year: "2024" },
-        { name: "Database Migration", year: "2023" }
-      ],
-      learningPath: [
-        { title: "AWS fundamentals", date: "2023", completed: true },
-        { title: "Serverless architecture", date: "2024", completed: true },
-        { title: "Advanced networking", date: "2025", completed: false }
-      ],
-      lastUpdated: "Oct 2024"
     },
     {
       id: 10,

@@ -8,78 +8,83 @@ const TimelineSection = () => {
   const timeline = [
     {
       year: "2019",
-      phase: "The Spark",
-      title: "First Lines of Code",
-      description: "Discovered the magic of programming during university. Built my first web application - a simple task manager that sparked a lifelong passion for creating digital solutions.",
+      phase: "Learning Basics",
+      title: "HTML & CSS",
+      description: "Découverte du développement web et apprentissage des bases avec HTML et CSS.",
       achievements: [
-        "Learned HTML, CSS, and JavaScript fundamentals",
-        "Built first full-stack application with Node.js",
-        "Contributed to open-source projects",
-        "Won university hackathon with team project"
+        "Structure des pages web",
+        "Styles responsives de base",
+        "Premières maquettes"
       ],
-      technologies: ["HTML", "CSS", "JavaScript", "Node.js", "MongoDB"],
+      technologies: ["HTML", "CSS"],
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
       color: "primary"
     },
     {
-      year: "2020-2021",
-      phase: "The Foundation",
-      title: "Building Core Skills",
-      description: "Dove deep into modern web development frameworks and best practices. Completed multiple internships and freelance projects, establishing a solid foundation in full-stack development.",
+      year: "2021-2022",
+      phase: "Baccalauréat",
+      title: "Obtention du Bac",
+      description: "Achèvement du baccalauréat et préparation au parcours universitaire.",
       achievements: [
-        "Mastered React and Vue.js frameworks",
-        "Completed 3 successful internships",
-        "Delivered 15+ freelance projects",
-        "Earned AWS Cloud Practitioner certification"
+        "Focus sur les matières scientifiques",
+        "Orientation vers l'informatique"
       ],
-      technologies: ["React", "Vue.js", "Python", "Django", "PostgreSQL", "AWS"],
+      technologies: ["Maths", "Physique", "Informatique"],
       image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=600&h=400&fit=crop",
       color: "accent"
     },
     {
-      year: "2022",
-      phase: "The Growth",
-      title: "Professional Breakthrough",
-      description: "Joined a fast-growing startup as a junior developer. Led my first major project redesign that improved user engagement by 40% and reduced load times by 60%.",
+      year: "2022-2023",
+      phase: "Début en Informatique",
+      title: "Étudiant en Informatique",
+      description: "Entrée à l'université en informatique et apprentissage des bases de la programmation.",
       achievements: [
-        "Led complete platform redesign project",
-        "Improved application performance by 60%",
-        "Mentored 2 junior developers",
-        "Implemented CI/CD pipelines"
+        "Algorithmes et structures de données",
+        "Bases de la programmation",
+        "Découverte des frameworks"
       ],
-      technologies: ["Next.js", "TypeScript", "Docker", "Kubernetes", "Redis"],
+      technologies: ["Python", "JavaScript"],
       image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop",
       color: "success"
     },
     {
-      year: "2023",
-      phase: "The Expansion",
-      title: "Technical Leadership",
-      description: "Promoted to senior developer role. Architected microservices infrastructure serving 100K+ users. Started contributing to technical blogs and speaking at local meetups.",
+      year: "2023-2024",
+      phase: "Premiers Projets",
+      title: "Premier Site Web",
+      description: "Réalisation du premier site web complet et publication en ligne.",
       achievements: [
-        "Architected scalable microservices platform",
-        "Reduced infrastructure costs by 35%",
-        "Published 12 technical articles",
-        "Spoke at 5 developer conferences"
+        "Site web responsive",
+        "Bonnes pratiques UI/UX"
       ],
-      technologies: ["Microservices", "GraphQL", "Terraform", "Monitoring", "DevOps"],
+      technologies: ["React", "Tailwind"],
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop",
       color: "warning"
     },
     {
       year: "2024",
-      phase: "The Innovation",
-      title: "Digital Craftsman",
-      description: "Established myself as a full-stack architect and digital craftsman. Currently working on cutting-edge projects involving AI integration and advanced user experiences.",
+      phase: "Première Application",
+      title: "Première App",
+      description: "Conception et développement d'une première application complète.",
       achievements: [
-        "Integrated AI/ML capabilities into web apps",
-        "Built real-time collaboration platforms",
-        "Achieved 99.9% uptime across all projects",
-        "Launched personal brand and consultancy"
+        "Auth, CRUD, déploiement",
+        "Optimisations de performance"
       ],
-      technologies: ["AI/ML", "WebRTC", "WebAssembly", "Edge Computing", "Advanced React"],
+      technologies: ["React", "Node.js"],
       image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop",
       color: "primary"
+    },
+    {
+      year: "2025",
+      phase: "Grand Départ",
+      title: "Le début du grand voyage",
+      description: "Lancement de projets ambitieux et montée en puissance sur des applications réelles.",
+      achievements: [
+        "Applications professionnelles",
+        "Vision long terme"
+      ],
+      technologies: ["Django", "React", "MySQL"],
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop",
+      color: "accent"
     }
   ];
 
