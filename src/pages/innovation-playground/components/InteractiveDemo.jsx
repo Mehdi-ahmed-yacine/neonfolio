@@ -3,296 +3,248 @@ import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 
 const InteractiveDemo = () => {
-  const [activeDemo, setActiveDemo] = useState('neural-network');
+  const [activeDemo, setActiveDemo] = useState('react-counter');
   const [isRunning, setIsRunning] = useState(false);
+  const [counter, setCounter] = useState(0);
+  const [formData, setFormData] = useState({ name: '', email: '' });
+  const [calcValue, setCalcValue] = useState('');
   const canvasRef = useRef(null);
   const animationRef = useRef(null);
 
   const demos = [
     {
-      id: 'neural-network',
-      title: 'Neural Network Visualization',
-      description: 'Interactive neural network with real-time learning simulation',
-      icon: 'Brain',
-      complexity: 'Advanced'
-    },
-    {
-      id: 'particle-system',
-      title: 'Particle Physics Engine',
-      description: 'WebGL-powered particle system with collision detection',
-      icon: 'Zap',
-      complexity: 'Intermediate'
-    },
-    {
-      id: 'code-morphing',
-      title: 'Code Morphing Animation',
-      description: 'Dynamic code transformation with syntax highlighting',
-      icon: 'Code2',
+      id: 'react-counter',
+      title: 'React Counter',
+      description: 'Simple state management with useState hook',
+      icon: 'Plus',
       complexity: 'Basic'
     },
     {
-      id: 'data-flow',
-      title: 'Real-time Data Flow',
-      description: 'Live data visualization with WebSocket integration',
-      icon: 'Activity',
-      complexity: 'Advanced'
+      id: 'css-animation',
+      title: 'CSS Animation',
+      description: 'Basic CSS transitions and animations',
+      icon: 'Palette',
+      complexity: 'Basic'
+    },
+    {
+      id: 'simple-form',
+      title: 'Form Handling',
+      description: 'React form with controlled inputs',
+      icon: 'FileText',
+      complexity: 'Basic'
+    },
+    {
+      id: 'basic-calculator',
+      title: 'Basic Calculator',
+      description: 'Simple math operations with React',
+      icon: 'Calculator',
+      complexity: 'Basic'
     }
   ];
 
-  // Neural Network Demo
-  const drawNeuralNetwork = (ctx, time) => {
-    const width = ctx?.canvas?.width;
-    const height = ctx?.canvas?.height;
-    
-    ctx?.clearRect(0, 0, width, height);
-    
-    // Network layers
-    const layers = [4, 6, 6, 3];
-    const layerSpacing = width / (layers?.length + 1);
-    
-    layers?.forEach((neurons, layerIndex) => {
-      const x = layerSpacing * (layerIndex + 1);
-      const neuronSpacing = height / (neurons + 1);
-      
-      for (let i = 0; i < neurons; i++) {
-        const y = neuronSpacing * (i + 1);
-        
-        // Draw connections to next layer
-        if (layerIndex < layers?.length - 1) {
-          const nextLayerNeurons = layers?.[layerIndex + 1];
-          const nextX = layerSpacing * (layerIndex + 2);
-          const nextNeuronSpacing = height / (nextLayerNeurons + 1);
-          
-          for (let j = 0; j < nextLayerNeurons; j++) {
-            const nextY = nextNeuronSpacing * (j + 1);
-            const activity = Math.sin(time * 0.01 + i + j) * 0.5 + 0.5;
-            
-            ctx.strokeStyle = `rgba(0, 255, 136, ${activity * 0.8})`;
-            ctx.lineWidth = activity * 3;
-            ctx?.beginPath();
-            ctx?.moveTo(x, y);
-            ctx?.lineTo(nextX, nextY);
-            ctx?.stroke();
-          }
-        }
-        
-        // Draw neuron
-        const activity = Math.sin(time * 0.02 + i + layerIndex) * 0.5 + 0.5;
-        ctx.fillStyle = `rgba(0, 255, 136, ${activity})`;
-        ctx?.beginPath();
-        ctx?.arc(x, y, 8 + activity * 4, 0, Math.PI * 2);
-        ctx?.fill();
-        
-        ctx.strokeStyle = '#00ff88';
-        ctx.lineWidth = 2;
-        ctx?.stroke();
-      }
-    });
-  };
+  // React Counter Demo
+  const CounterDemo = () => (
+    <div className="text-center p-8">
+      <div className="text-6xl font-bold text-primary mb-6">{counter}</div>
+      <div className="flex justify-center space-x-4">
+        <Button
+          onClick={() => setCounter(prev => prev - 1)}
+          variant="outline"
+          size="lg"
+          iconName="Minus"
+          iconPosition="left"
+        >
+          Decrease
+        </Button>
+        <Button
+          onClick={() => setCounter(0)}
+          variant="outline"
+          size="lg"
+          iconName="RotateCcw"
+          iconPosition="left"
+        >
+          Reset
+        </Button>
+        <Button
+          onClick={() => setCounter(prev => prev + 1)}
+          variant="outline"
+          size="lg"
+          iconName="Plus"
+          iconPosition="left"
+        >
+          Increase
+        </Button>
+      </div>
+      <div className="mt-6 text-muted-foreground">
+        <p>This demonstrates React's useState hook for managing component state.</p>
+        <p className="text-sm mt-2">Click the buttons to see the counter change in real-time!</p>
+      </div>
+    </div>
+  );
 
-  // Particle System Demo
-  const drawParticleSystem = (ctx, time) => {
-    const width = ctx?.canvas?.width;
-    const height = ctx?.canvas?.height;
-    
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-    ctx?.fillRect(0, 0, width, height);
-    
-    const particleCount = 50;
-    
-    for (let i = 0; i < particleCount; i++) {
-      const angle = (i / particleCount) * Math.PI * 2 + time * 0.01;
-      const radius = 100 + Math.sin(time * 0.005 + i) * 50;
-      const x = width / 2 + Math.cos(angle) * radius;
-      const y = height / 2 + Math.sin(angle) * radius;
-      
-      const hue = (time * 0.1 + i * 10) % 360;
-      ctx.fillStyle = `hsl(${hue}, 70%, 60%)`;
-      
-      ctx?.beginPath();
-      ctx?.arc(x, y, 3, 0, Math.PI * 2);
-      ctx?.fill();
-      
-      // Trail effect
-      ctx.strokeStyle = `hsla(${hue}, 70%, 60%, 0.3)`;
-      ctx.lineWidth = 1;
-      ctx?.beginPath();
-      ctx?.moveTo(x, y);
-      ctx?.lineTo(
-        width / 2 + Math.cos(angle - 0.1) * (radius - 10),
-        height / 2 + Math.sin(angle - 0.1) * (radius - 10)
-      );
-      ctx?.stroke();
-    }
-  };
+  // CSS Animation Demo
+  const CSSAnimationDemo = () => (
+    <div className="text-center p-8">
+      <div className="flex justify-center space-x-8 mb-8">
+        <div className={`w-20 h-20 bg-primary rounded-lg transition-all duration-500 ${isRunning ? 'animate-bounce' : ''}`}>
+          <div className="flex items-center justify-center h-full text-white font-bold">Bounce</div>
+        </div>
+        <div className={`w-20 h-20 bg-accent rounded-lg transition-all duration-500 ${isRunning ? 'animate-pulse' : ''}`}>
+          <div className="flex items-center justify-center h-full text-white font-bold">Pulse</div>
+        </div>
+        <div className={`w-20 h-20 bg-warning rounded-lg transition-all duration-500 ${isRunning ? 'animate-spin' : ''}`}>
+          <div className="flex items-center justify-center h-full text-white font-bold">Spin</div>
+        </div>
+      </div>
+      <div className="mb-6">
+        <Button
+          onClick={() => setIsRunning(!isRunning)}
+          variant={isRunning ? "destructive" : "default"}
+          size="lg"
+          iconName={isRunning ? "Pause" : "Play"}
+          iconPosition="left"
+        >
+          {isRunning ? 'Stop' : 'Start'} Animations
+        </Button>
+      </div>
+      <div className="text-muted-foreground">
+        <p>These are basic CSS animations using Tailwind CSS classes.</p>
+        <p className="text-sm mt-2">Click Start to see the animations in action!</p>
+      </div>
+    </div>
+  );
 
-  // Code Morphing Demo
-  const drawCodeMorphing = (ctx, time) => {
-    const width = ctx?.canvas?.width;
-    const height = ctx?.canvas?.height;
-    
-    ctx?.clearRect(0, 0, width, height);
-    
-    const codeLines = [
-      'const neural = new NeuralNetwork();',
-      'neural.addLayer(128, "relu");',
-      'neural.addLayer(64, "sigmoid");',
-      'neural.compile("adam", "mse");',
-      'await neural.train(dataset);'
-    ];
-    
-    ctx.font = '16px "Fira Code", monospace';
-    ctx.textAlign = 'left';
-    
-    codeLines?.forEach((line, index) => {
-      const y = 50 + index * 40;
-      const chars = line?.split('');
+  // Simple Form Demo
+  const FormDemo = () => (
+    <div className="p-8 max-w-md mx-auto">
+      <div className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-foreground mb-2">Name</label>
+          <input
+            type="text"
+            value={formData.name}
+            onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+            className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
+            placeholder="Enter your name"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-foreground mb-2">Email</label>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+            className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
+            placeholder="Enter your email"
+          />
+        </div>
+        <Button
+          onClick={() => alert(`Form submitted!\nName: ${formData.name}\nEmail: ${formData.email}`)}
+          className="w-full"
+          iconName="Send"
+          iconPosition="left"
+        >
+          Submit Form
+        </Button>
+      </div>
       
-      chars?.forEach((char, charIndex) => {
-        const x = 20 + charIndex * 10;
-        const wave = Math.sin(time * 0.01 + charIndex * 0.1 + index) * 10;
-        const alpha = Math.sin(time * 0.005 + charIndex * 0.05) * 0.3 + 0.7;
-        
-        // Syntax highlighting colors
-        let color = '#ffffff';
-        if (char === '(' || char === ')' || char === '{' || char === '}') color = '#00d4ff';
-        if (char === '"' || char === "'") color = '#00ff88';
-        if (/[0-9]/?.test(char)) color = '#ffb800';
-        
-        ctx.fillStyle = `${color}${Math.floor(alpha * 255)?.toString(16)?.padStart(2, '0')}`;
-        ctx?.fillText(char, x, y + wave);
-      });
-    });
-  };
+      <div className="mt-6 p-4 bg-muted/20 rounded-lg">
+        <h4 className="font-medium text-foreground mb-2">Form Data (Live Preview):</h4>
+        <pre className="text-sm text-muted-foreground">
+          {JSON.stringify(formData, null, 2)}
+        </pre>
+      </div>
+      
+      <div className="mt-4 text-center text-muted-foreground text-sm">
+        <p>This shows controlled inputs and form state management in React.</p>
+      </div>
+    </div>
+  );
 
-  // Data Flow Demo
-  const drawDataFlow = (ctx, time) => {
-    const width = ctx?.canvas?.width;
-    const height = ctx?.canvas?.height;
+  // Basic Calculator Demo
+  const CalculatorDemo = () => {
+    const [result, setResult] = useState('');
     
-    ctx?.clearRect(0, 0, width, height);
+    const handleNumber = (num) => {
+      setCalcValue(prev => prev + num);
+    };
     
-    // Draw data nodes
-    const nodes = [
-      { x: 100, y: height / 2, label: 'Input' },
-      { x: width / 2, y: 100, label: 'Process' },
-      { x: width / 2, y: height - 100, label: 'Transform' },
-      { x: width - 100, y: height / 2, label: 'Output' }
-    ];
+    const handleOperator = (op) => {
+      setCalcValue(prev => prev + ' ' + op + ' ');
+    };
     
-    // Draw connections with flowing data
-    const connections = [
-      [0, 1], [0, 2], [1, 3], [2, 3]
-    ];
-    
-    connections?.forEach(([from, to]) => {
-      const fromNode = nodes?.[from];
-      const toNode = nodes?.[to];
-      
-      ctx.strokeStyle = '#00ff88';
-      ctx.lineWidth = 2;
-      ctx?.beginPath();
-      ctx?.moveTo(fromNode?.x, fromNode?.y);
-      ctx?.lineTo(toNode?.x, toNode?.y);
-      ctx?.stroke();
-      
-      // Flowing data points
-      for (let i = 0; i < 3; i++) {
-        const progress = ((time * 0.01 + i * 0.3) % 1);
-        const x = fromNode?.x + (toNode?.x - fromNode?.x) * progress;
-        const y = fromNode?.y + (toNode?.y - fromNode?.y) * progress;
-        
-        ctx.fillStyle = '#00d4ff';
-        ctx?.beginPath();
-        ctx?.arc(x, y, 4, 0, Math.PI * 2);
-        ctx?.fill();
-      }
-    });
-    
-    // Draw nodes
-    nodes?.forEach((node, index) => {
-      const pulse = Math.sin(time * 0.02 + index) * 0.3 + 0.7;
-      
-      ctx.fillStyle = `rgba(0, 255, 136, ${pulse})`;
-      ctx?.beginPath();
-      ctx?.arc(node?.x, node?.y, 20, 0, Math.PI * 2);
-      ctx?.fill();
-      
-      ctx.strokeStyle = '#00ff88';
-      ctx.lineWidth = 2;
-      ctx?.stroke();
-      
-      ctx.fillStyle = '#ffffff';
-      ctx.font = '12px Inter';
-      ctx.textAlign = 'center';
-      ctx?.fillText(node?.label, node?.x, node?.y - 30);
-    });
-  };
-
-  const animate = (timestamp) => {
-    const canvas = canvasRef?.current;
-    if (!canvas) return;
-    
-    const ctx = canvas?.getContext('2d');
-    
-    switch (activeDemo) {
-      case 'neural-network':
-        drawNeuralNetwork(ctx, timestamp);
-        break;
-      case 'particle-system':
-        drawParticleSystem(ctx, timestamp);
-        break;
-      case 'code-morphing':
-        drawCodeMorphing(ctx, timestamp);
-        break;
-      case 'data-flow':
-        drawDataFlow(ctx, timestamp);
-        break;
-    }
-    
-    if (isRunning) {
-      animationRef.current = requestAnimationFrame(animate);
-    }
-  };
-
-  useEffect(() => {
-    if (isRunning) {
-      animationRef.current = requestAnimationFrame(animate);
-    } else {
-      if (animationRef?.current) {
-        cancelAnimationFrame(animationRef?.current);
-      }
-    }
-    
-    return () => {
-      if (animationRef?.current) {
-        cancelAnimationFrame(animationRef?.current);
+    const calculate = () => {
+      try {
+        const calculated = eval(calcValue);
+        setResult(calculated);
+      } catch (error) {
+        setResult('Error');
       }
     };
-  }, [isRunning, activeDemo]);
-
-  useEffect(() => {
-    const canvas = canvasRef?.current;
-    if (canvas) {
-      canvas.width = canvas?.offsetWidth;
-      canvas.height = canvas?.offsetHeight;
-    }
-  }, [activeDemo]);
-
-  const handleStart = () => {
-    setIsRunning(true);
+    
+    const clear = () => {
+      setCalcValue('');
+      setResult('');
+    };
+    
+    return (
+      <div className="p-8 max-w-sm mx-auto">
+        <div className="bg-muted/20 p-4 rounded-lg mb-4">
+          <div className="text-right text-2xl font-mono text-foreground mb-2">
+            {calcValue || '0'}
+          </div>
+          <div className="text-right text-lg font-mono text-muted-foreground">
+            {result || '='}
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-4 gap-2">
+          {[7, 8, 9, '/', 4, 5, 6, '*', 1, 2, 3, '-', 0, '.', '=', '+'].map((item) => (
+            <button
+              key={item}
+              onClick={() => {
+                if (item === '=') calculate();
+                else if (['+', '-', '*', '/'].includes(item)) handleOperator(item);
+                else handleNumber(item);
+              }}
+              className={`p-4 text-lg font-medium rounded-lg transition-colors ${
+                item === '='
+                  ? 'bg-primary text-white hover:bg-primary/90'
+                  : ['+', '-', '*', '/'].includes(item)
+                  ? 'bg-accent text-white hover:bg-accent/90'
+                  : 'bg-card text-foreground hover:bg-muted/50 border border-border'
+              }`}
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+        
+        <div className="mt-4 text-center">
+          <Button onClick={clear} variant="outline" size="sm">
+            Clear
+          </Button>
+        </div>
+        
+        <div className="mt-4 text-center text-muted-foreground text-sm">
+          <p>A simple calculator using React state and basic JavaScript eval().</p>
+        </div>
+      </div>
+    );
   };
 
-  const handleStop = () => {
-    setIsRunning(false);
-  };
-
-  const handleReset = () => {
-    setIsRunning(false);
-    const canvas = canvasRef?.current;
-    if (canvas) {
-      const ctx = canvas?.getContext('2d');
-      ctx?.clearRect(0, 0, canvas?.width, canvas?.height);
+  const renderDemo = () => {
+    switch (activeDemo) {
+      case 'react-counter':
+        return <CounterDemo />;
+      case 'css-animation':
+        return <CSSAnimationDemo />;
+      case 'simple-form':
+        return <FormDemo />;
+      case 'basic-calculator':
+        return <CalculatorDemo />;
+      default:
+        return <CounterDemo />;
     }
   };
 
@@ -302,10 +254,11 @@ const InteractiveDemo = () => {
       <div className="text-center">
         <h3 className="text-2xl font-bold text-foreground mb-4">Interactive Demonstrations</h3>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Live demonstrations of advanced web technologies and algorithms. 
-          Each demo showcases different aspects of modern web development capabilities.
+          Simple, beginner-friendly demos showing basic React concepts. 
+          Each demo demonstrates fundamental web development skills you can learn and build upon.
         </p>
       </div>
+      
       {/* Demo Selection */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
         {demos?.map((demo) => (
@@ -314,7 +267,8 @@ const InteractiveDemo = () => {
             onClick={() => setActiveDemo(demo?.id)}
             className={`p-4 rounded-xl border transition-all duration-300 text-left ${
               activeDemo === demo?.id
-                ? 'bg-primary/10 border-primary/30 text-primary' :'bg-card border-border text-muted-foreground hover:text-foreground hover:border-primary/20'
+                ? 'bg-primary/10 border-primary/30 text-primary' 
+                : 'bg-card border-border text-muted-foreground hover:text-foreground hover:border-primary/20'
             }`}
           >
             <div className="flex items-center space-x-3 mb-2">
@@ -327,87 +281,53 @@ const InteractiveDemo = () => {
                 {demo?.complexity}
               </span>
               {activeDemo === demo?.id && (
-                <Icon name="Play" size={14} className="text-primary" />
+                <Icon name="Check" size={14} className="text-primary" />
               )}
             </div>
           </button>
         ))}
       </div>
-      {/* Demo Canvas */}
+      
+      {/* Demo Display */}
       <div className="bg-card rounded-xl border border-border overflow-hidden">
-        <div className="p-4 border-b border-border flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <h4 className="font-semibold text-foreground">
-              {demos?.find(d => d?.id === activeDemo)?.title}
-            </h4>
-            <div className="flex items-center space-x-2">
-              <div className={`w-2 h-2 rounded-full ${isRunning ? 'bg-success animate-pulse' : 'bg-muted-foreground'}`}></div>
-              <span className="text-sm text-muted-foreground">
-                {isRunning ? 'Running' : 'Stopped'}
-              </span>
-            </div>
-          </div>
-          
-          <div className="flex items-center space-x-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleStart}
-              disabled={isRunning}
-              iconName="Play"
-              iconPosition="left"
-            >
-              Start
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleStop}
-              disabled={!isRunning}
-              iconName="Pause"
-              iconPosition="left"
-            >
-              Stop
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleReset}
-              iconName="RotateCcw"
-              iconPosition="left"
-            >
-              Reset
-            </Button>
-          </div>
+        <div className="p-4 border-b border-border">
+          <h4 className="font-semibold text-foreground">
+            {demos?.find(d => d?.id === activeDemo)?.title}
+          </h4>
+          <p className="text-sm text-muted-foreground mt-1">
+            {demos?.find(d => d?.id === activeDemo)?.description}
+          </p>
         </div>
         
-        <div className="relative">
-          <canvas
-            ref={canvasRef}
-            className="w-full h-96 bg-deep-focus"
-            style={{ display: 'block' }}
-          />
-          
-          {!isRunning && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm">
-              <div className="text-center">
-                <Icon name="Play" size={48} className="text-primary mx-auto mb-4" />
-                <p className="text-foreground font-medium mb-2">Demo Ready</p>
-                <p className="text-muted-foreground text-sm">Click Start to begin the demonstration</p>
-              </div>
-            </div>
-          )}
+        <div className="min-h-96">
+          {renderDemo()}
         </div>
       </div>
+      
       {/* Demo Information */}
       <div className="grid md:grid-cols-3 gap-6">
         <div className="bg-card rounded-lg p-6 border border-border">
           <div className="flex items-center space-x-2 mb-3">
             <Icon name="Info" size={20} className="text-primary" />
-            <h4 className="font-semibold text-foreground">About This Demo</h4>
+            <h4 className="font-semibold text-foreground">What You'll Learn</h4>
           </div>
           <p className="text-muted-foreground text-sm">
-            {demos?.find(d => d?.id === activeDemo)?.description}
+            {activeDemo === 'react-counter' && 'React hooks, state management, event handling'}
+            {activeDemo === 'css-animation' && ['CSS Animations', 'Tailwind CSS', 'React State']?.map(tech => (
+              <span key={tech} className="px-2 py-1 bg-muted/20 text-muted-foreground text-xs rounded">
+                {tech}
+              </span>
+            ))}
+            {activeDemo === 'simple-form' && ['Form Handling', 'Controlled Inputs', 'State Updates']?.map(tech => (
+              <span key={tech} className="px-2 py-1 bg-muted/20 text-muted-foreground text-xs rounded">
+                {tech}
+              </span>
+            ))}
+            {activeDemo === 'basic-calculator' && ['State Management', 'Event Handling', 'Basic Logic']?.map(tech => (
+              <span key={tech} className="px-2 py-1 bg-muted/20 text-muted-foreground text-xs rounded">
+                {tech}
+              </span>
+            ))}
           </p>
         </div>
 
@@ -417,22 +337,22 @@ const InteractiveDemo = () => {
             <h4 className="font-semibold text-foreground">Technologies Used</h4>
           </div>
           <div className="flex flex-wrap gap-2">
-            {activeDemo === 'neural-network' && ['Canvas API', 'Animation Frames', 'Mathematical Functions']?.map(tech => (
+            {activeDemo === 'react-counter' && ['React Hooks', 'useState', 'Event Handling']?.map(tech => (
               <span key={tech} className="px-2 py-1 bg-muted/20 text-muted-foreground text-xs rounded">
                 {tech}
               </span>
             ))}
-            {activeDemo === 'particle-system' && ['WebGL', 'Physics Engine', 'Real-time Rendering']?.map(tech => (
+            {activeDemo === 'css-animation' && ['CSS Animations', 'Tailwind CSS', 'React State']?.map(tech => (
               <span key={tech} className="px-2 py-1 bg-muted/20 text-muted-foreground text-xs rounded">
                 {tech}
               </span>
             ))}
-            {activeDemo === 'code-morphing' && ['Typography', 'Text Animation', 'Syntax Highlighting']?.map(tech => (
+            {activeDemo === 'simple-form' && ['Form Handling', 'Controlled Inputs', 'State Updates']?.map(tech => (
               <span key={tech} className="px-2 py-1 bg-muted/20 text-muted-foreground text-xs rounded">
                 {tech}
               </span>
             ))}
-            {activeDemo === 'data-flow' && ['Data Visualization', 'Real-time Updates', 'Node Graphs']?.map(tech => (
+            {activeDemo === 'basic-calculator' && ['State Management', 'Event Handling', 'Basic Logic']?.map(tech => (
               <span key={tech} className="px-2 py-1 bg-muted/20 text-muted-foreground text-xs rounded">
                 {tech}
               </span>
@@ -443,10 +363,10 @@ const InteractiveDemo = () => {
         <div className="bg-card rounded-lg p-6 border border-border">
           <div className="flex items-center space-x-2 mb-3">
             <Icon name="Lightbulb" size={20} className="text-warning" />
-            <h4 className="font-semibold text-foreground">Key Insights</h4>
+            <h4 className="font-semibold text-foreground">Next Steps</h4>
           </div>
           <p className="text-muted-foreground text-sm">
-            This demonstration showcases the potential of browser-based computing and real-time visualization capabilities.
+            Try modifying these demos! Change colors, add new features, or combine concepts from different demos to create something new.
           </p>
         </div>
       </div>
